@@ -21,7 +21,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(cors({ origin: "*" }));
 app.use("/api/v1/admins",adminRoute);
-
+//Error middlewares
+app.use(notFoundErr);
+app.use(globalErrHandler);
 const PORTS = process.env.PORT;
 
 app.listen(PORTS,console.log(`server started at port ${PORTS}`));
