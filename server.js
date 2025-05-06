@@ -4,6 +4,10 @@ const cors = require("cors");
 
 const dbconnect = require("./config/Db.js");
 const adminRoute = require("./routes/adminRouter.js");
+const {
+  globalErrHandler,
+  notFoundErr,
+} = require("../middlewares/globalErrHandler");
 
 dbconnect();
 
